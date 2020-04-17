@@ -29,6 +29,7 @@ class UserForm {
 
   loginFormAction() {
     this.loginFormCallback(this.getData(this.loginForm));
+    
     this.loginForm.reset();
   }
 
