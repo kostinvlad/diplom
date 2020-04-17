@@ -42,10 +42,10 @@ moneyManager.addMoneyCallback = data => {
         function(responseBody){
             if(responseBody.success){
                 ProfileWidget.showProfile(responseBody.data)            
-                moneyManager.setMessage(null, 'Баланс успешно пополнен')
+                moneyManager.setMessage(false, 'Баланс успешно пополнен')
             }
             else {
-                moneyManager.setMessage('Ошибка:', responseBody.data)
+                moneyManager.setMessage(true, responseBody.data)
             }
         })
 };
@@ -55,10 +55,10 @@ moneyManager.conversionMoneyCallback = data => {
         function(responseBody){
             if(responseBody.success){
                 ProfileWidget.showProfile(responseBody.data)            
-                moneyManager.setMessage(null, 'Валюта конвертирована')
+                moneyManager.setMessage(false, 'Валюта конвертирована')
             }
             else {
-                moneyManager.setMessage('Ошибка:', responseBody.data)
+                moneyManager.setMessage(true, responseBody.data)
             }
         })
 };

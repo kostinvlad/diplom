@@ -7,7 +7,7 @@ userForm.loginFormCallback = data => {
     ApiConnector.login(data, 
         function(responseBody){        
         if(!responseBody.success){
-            alert(responseBody.data)
+            userForm.setLoginErrorMessage(responseBody.data)
         }
         else {
             location.reload(); 
@@ -21,7 +21,7 @@ userForm.registerFormCallback = data => {
     ApiConnector.register(data, 
         function(responseBody){       
         if(!responseBody.success){
-            alert(responseBody.data)
+            userForm.setRegisterErrorMessage(responseBody.data)
         }
         else {
             alert('Регистрация прошла успешно!')
